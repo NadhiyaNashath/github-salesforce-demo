@@ -21,6 +21,7 @@ public type SalesforceCase record {|
     string Description;
     string Status;
     string Priority;
-    string RecordTypeId;
     string OwnerId;
+    string Type?;
+    string GitHub_Issue_URL__c?;
 |};

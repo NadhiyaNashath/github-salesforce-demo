@@ -55,14 +55,16 @@ service github:IssuesService on githubListener {
                     string issueTitle = issue.title;
                     string? issueBody = issue.body;
                     string issueDescription = issueBody is string ? issueBody : "";
+                    string issueHtmlUrl = issue.html_url;
 
                     SalesforceCase salesforceCase = {
                         Subject: issueTitle,
                         Description: issueDescription,
                         Status: caseStatus,
                         Priority: casePriority,
-                        RecordTypeId: caseRecordType,
-                        OwnerId: caseOwnerId
+                        OwnerId: caseOwnerId,
+                        Type: caseRecordType,
+                        GitHub_Issue_URL__c: issueHtmlUrl
                     };
 
                     _ = check salesforceClient->create(sObjectName = "Case", sObject = salesforceCase);

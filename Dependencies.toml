@@ -150,7 +150,23 @@ dependencies = [
 
 [[package]]
 org = "ballerina"
+name = "lang.boolean"
+version = "0.0.0"
+dependencies = [
+	{org = "ballerina", name = "jballerina.java"}
+]
+
+[[package]]
+org = "ballerina"
 name = "lang.decimal"
+version = "0.0.0"
+dependencies = [
+	{org = "ballerina", name = "jballerina.java"}
+]
+
+[[package]]
+org = "ballerina"
+name = "lang.float"
 version = "0.0.0"
 dependencies = [
 	{org = "ballerina", name = "jballerina.java"}
@@ -199,6 +215,14 @@ dependencies = [
 [[package]]
 org = "ballerina"
 name = "lang.value"
+version = "0.0.0"
+dependencies = [
+	{org = "ballerina", name = "jballerina.java"}
+]
+
+[[package]]
+org = "ballerina"
+name = "lang.xml"
 version = "0.0.0"
 dependencies = [
 	{org = "ballerina", name = "jballerina.java"}
@@ -313,6 +337,47 @@ dependencies = [
 
 [[package]]
 org = "ballerinax"
+name = "client.config"
+version = "1.0.1"
+dependencies = [
+	{org = "ballerina", name = "http"},
+	{org = "ballerina", name = "oauth2"}
+]
+
+[[package]]
+org = "ballerinax"
+name = "salesforce"
+version = "8.3.0"
+dependencies = [
+	{org = "ballerina", name = "http"},
+	{org = "ballerina", name = "io"},
+	{org = "ballerina", name = "jballerina.java"},
+	{org = "ballerina", name = "lang.boolean"},
+	{org = "ballerina", name = "lang.float"},
+	{org = "ballerina", name = "lang.int"},
+	{org = "ballerina", name = "lang.runtime"},
+	{org = "ballerina", name = "lang.string"},
+	{org = "ballerina", name = "lang.xml"},
+	{org = "ballerina", name = "log"},
+	{org = "ballerina", name = "oauth2"},
+	{org = "ballerina", name = "os"},
+	{org = "ballerina", name = "time"},
+	{org = "ballerina", name = "url"},
+	{org = "ballerinai", name = "observe"},
+	{org = "ballerinax", name = "client.config"}
+]
+modules = [
+	{org = "ballerinax", packageName = "salesforce", moduleName = "salesforce"},
+	{org = "ballerinax", packageName = "salesforce", moduleName = "salesforce.apex"},
+	{org = "ballerinax", packageName = "salesforce", moduleName = "salesforce.bulk"},
+	{org = "ballerinax", packageName = "salesforce", moduleName = "salesforce.bulkv2"},
+	{org = "ballerinax", packageName = "salesforce", moduleName = "salesforce.soap"},
+	{org = "ballerinax", packageName = "salesforce", moduleName = "salesforce.types"},
+	{org = "ballerinax", packageName = "salesforce", moduleName = "salesforce.utils"}
+]
+
+[[package]]
+org = "ballerinax"
 name = "trigger.github"
 version = "0.10.0"
 dependencies = [
@@ -329,13 +394,14 @@ modules = [
 ]
 
 [[package]]
-org = "devant"
-name = "Sample"
+org = "devantdemos"
+name = "github_salesforce_demo"
 version = "1.0.0"
 dependencies = [
+	{org = "ballerinax", name = "salesforce"},
 	{org = "ballerinax", name = "trigger.github"}
 ]
 modules = [
-	{org = "devant", packageName = "Sample", moduleName = "Sample"}
+	{org = "devantdemos", packageName = "github_salesforce_demo", moduleName = "github_salesforce_demo"}
 ]
 
